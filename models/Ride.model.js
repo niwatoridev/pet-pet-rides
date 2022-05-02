@@ -5,40 +5,40 @@ const rideSchema = new Schema(
     {
     origin: {
         type: String,
-        required: true,
+        required: true
     },
     destination: {
         type: String,
-        required: true,
+        required: true
     },
     date: {
         type: date,
-        required: true,
+        required: true
         },
         time: {
             type:String,
-            required: true,
+            required: true
         },
     price: {
         type: Number,
-        required: true,
+        required: true
     },
     driver: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
-
+        required: true
     },
     passengers: {
     type: [Schema.Types.ObjectId],
-    ref: 'User',
+    ref: 'User'
     },
+
     car: {
     type: Schema.Types.ObjectId,
     ref: 'Car'
     },
 
-timestamps: true
+
     
     
 

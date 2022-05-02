@@ -20,7 +20,7 @@ size: {
     type: String,
     required: true,
     enum: ["small", "medium", "large"],
-},
+}
 
 
 

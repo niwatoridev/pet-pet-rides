@@ -4,7 +4,7 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema(
   {
     name: {
-type: [{name: String, lastName: String}],
+type: String,
 required: true
     },
    username: {
@@ -15,6 +15,7 @@ required: true
     password: {
     type: String,
     required: true,
+    minlength: 8
   },
   email: {
     type: String,
@@ -24,18 +25,20 @@ required: true
   phoneNumber: {
     type: Number,
     unique: true,
-    required: true
+    required: true,
+    minlength: 10,
+    maxlength: 10
   },
   car: {
     type: Schema.Types.ObjectId,
-    ref: 'Car',
+    ref: 'Car'
   },
   pet: {
     type: Schema.Types.ObjectId,
     ref: 'Pet'
   },
 
-  timestamps: true
+
 
 });
 
