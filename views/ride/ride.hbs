@@ -1,0 +1,30 @@
+<form action="../ride/ride.hbs" method="POST">
+   <label> Origin
+      <input type="text" name="origin">
+   </label>
+   <label> Destination
+      <input type="text" name="destination">
+   </label>
+   <label> Date
+      <input type="date" name="date">
+   </label>
+   <label> Hour
+      <input type="time" name="hour">
+   </label>
+   <label> Choose your Car
+   <input list="listOfCar">
+
+<datalist id="listOfCar">
+  <option value="Coche 1">Coche 1</option>
+  <option value="Coche 2">Coche 2</option>
+
+  
+</datalist>
+   </label>
+
+   <button type="submit">Publish Trip</button>
+</form>
+
+{{#if errorMessage}}
+   {{errorMessage}}
+{{/if}}

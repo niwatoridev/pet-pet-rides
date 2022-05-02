@@ -7,19 +7,19 @@ const petSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User',
       },
-name: {
+petName: {
 type:String,
 require: true,
 },
     typeOfPet: {
     type: String,
     required: true,
-    enum: ["dog", "cat"],
+    enum: ["Dog", "Cat"],
 },
 size: {
     type: String,
     required: true,
-    enum: ["small", "medium", "large"],
+    enum: ["Small", "Medium", "Large"],
 }
 
 
@@ -27,6 +27,6 @@ size: {
 
 });
 
-const Pet = model("Pet", rideSchema);
+const Pet = model("Pet", petSchema);
 
 module.exports = Pet;

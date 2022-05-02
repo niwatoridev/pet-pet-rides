@@ -29,14 +29,14 @@ required: true
     minlength: 10,
     maxlength: 10
   },
-  car: {
+  car: [{
     type: Schema.Types.ObjectId,
     ref: 'Car'
-  },
-  pet: {
+  }],
+  pet: [{
     type: Schema.Types.ObjectId,
     ref: 'Pet'
-  },
+  }],
 
 
 
