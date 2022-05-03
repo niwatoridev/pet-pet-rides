@@ -22,10 +22,13 @@ size: {
     enum: ["Small", "Medium", "Large"],
 }
 
+},
+{
+    timestamps: true
+  }
 
 
-
-});
+);
 
 const Pet = model("Pet", petSchema);
 
