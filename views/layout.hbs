@@ -9,38 +9,42 @@
   </head>
 
   <body>
+
 <nav class="navbar">
-  <div>
-<a href="/"><img src="../images/logo-perro.png" alt="logo"></a>
-  </div>
-  <div>
-<a href="/ride/search">Buscar un Viaje</a>
-
-<a href="/ride/create">Crear un Viaje</a>
-
-  </div>
-<div>
-
-
-
-
 {{#if isSession }}
-<a href="/userAssets/petsList">Tus Mascotas</a>
-<a href="/auth/signup">Tus Vehiculos</a>
-<a href="/auth/logout">Cerrar Sesion</a>
-<a href="/register/car">Añadir Vehiculo</a>
-<a href="/register/pet">Añadir Mascota</a>
-
+  <div>
+    <a href="/"><img src="../images/logo-perro.png" alt="logo"></a>
+  </div>
+  <div>
+    <a href="/ride/search">Buscar un Viaje</a>
+    <a href="/ride/create">Crear un Viaje</a>
+  </div>
+  <div>
+    <a href="/userAssets/pets">Tus Mascotas</a>
+    <a href="/userAssets/cars">Tus Vehiculos</a>
+    <a href="/register/car">Añadir Vehiculo</a>
+    <a href="/register/pet">Añadir Mascota</a>
+  </div>
+  <div>
+    <a href="/auth/logout">Cerrar Sesion</a>
+  </div>
 {{else}}
-<a href="/auth/signup">Registrate</a>
-<a href="/auth/login">Inicia Sesion</a>
-
-{{/if}}
-
-
-
+<div>
+<a href="/"><img src="../images/logo-perro.png" alt="logo"></a>
 </div>
+<div>
+<a href="/ride/search">Buscar un Viaje</a>
+</div>
+<div>
+<a href="/auth/login">Inicia Sesion</a>
+  <a href="/auth/signup">Registrate</a>
+</div>
+{{/if}}
 </nav>
+
+
+
+
 
     {{{body}}}
 

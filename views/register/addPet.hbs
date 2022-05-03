@@ -1,27 +1,29 @@
 <form action="/register/pet" method="POST">
-   <label> Pet's Name
+   <label> Nombre de tu Mascota
       <input type="text" name="petName">
    </label>
-   <label> What's your Pet?
+   <label> ¿Qué animal es?
       <input name="typeOfPet" list="kindOfPet">
       <datalist id="kindOfPet">
-<option value="Dog">Dog</option>
-<option value="Cat">Cat</option>
+<option value="Dog">Perro</option>
+<option value="Cat">Gato</option>
 
       </datalist>
    </label>
-   <label> Size of your pet?
+   <label> ¿De qué tamaño es?
    <input name="size" list="sizeOfPet">
 
 <datalist id="sizeOfPet">
-  <option value="Small">Small</option>
-  <option value="Medium">Medium</option>
-  <option value="Large">Large</option>
+  <option value="Extra-Small">Pequeño</option>
+  <option value="Small">Pequeño</option>
+  <option value="Medium">Mediano</option>
+  <option value="Large">Grande</option>
+  <option value="Extra-Large">Extra Grande</option>
   
 </datalist>
    </label>
    
-   <button type="submit">Register your Friend</button>
+   <button type="submit">Registra a tu amigo</button>
 </form>
 
 {{#if errorMessage}}

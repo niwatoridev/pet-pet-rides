@@ -95,7 +95,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   });
 });
 
-router.get("/login", isLoggedOut, navBarIsLoggedIn, (req, res) => {
+router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login", { isSession: req.session.user });
 });
 
@@ -152,7 +152,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
     if (err) {
       return res
         .status(500)
-        .render("auth/logout", { errorMessage: err.message });
+        .render("auth/logout", { errorMessage: err.message }, { isSession: req.session.user });
     }
     res.redirect("/");
   });

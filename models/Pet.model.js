@@ -19,7 +19,7 @@ require: true,
 size: {
     type: String,
     required: true,
-    enum: ["Small", "Medium", "Large"],
+    enum: ["Extra-Small", "Small", "Medium", "Large", "Extra-Large"],
 }
 
 },

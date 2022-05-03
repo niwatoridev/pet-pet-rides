@@ -33,7 +33,7 @@ const rideSchema = new Schema(
     type: Schema.Types.ObjectId,
     ref: 'User'
     }],
-
+    
     car: {
     type: Schema.Types.ObjectId,
     ref: 'Car'
