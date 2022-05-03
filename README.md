@@ -1,6 +1,4 @@
 # pet-pet-rides
-
-<h1>Pet Pet Rides</h1>
 <h2>Made for Backpackers that own pets</h2>
 
 
