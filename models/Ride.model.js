@@ -13,9 +13,10 @@ const rideSchema = new Schema(
     },
     date: {
         type: date,
-        required: true
-        },
-        time: {
+        required: true,
+        departure: String 
+    },
+    travelDuration: {
             type:String,
             required: true
         },
@@ -28,21 +29,27 @@ const rideSchema = new Schema(
         ref: 'User',
         required: true
     },
-    passengers: {
-    type: [Schema.Types.ObjectId],
+    passengers: [{
+    type: Schema.Types.ObjectId,
     ref: 'User'
-    },
+    }],
 
     car: {
     type: Schema.Types.ObjectId,
     ref: 'Car'
     },
+},
+{
+    timestamps: true
+  }
 
+
+);
 
     
     
 
-});
+
 
 const Ride = model("Ride", rideSchema);
 
