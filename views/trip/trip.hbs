@@ -1,0 +1,31 @@
+<form action="/trip/trip.hbs" method="POST">
+   <label> Origin
+      <input type="text" name="origin">
+   </label>
+   <label> Destination
+      <input type="text" name="destination">
+   </label>
+   <label> Date
+      <input type="date" name="date">
+   </label>
+   <label> Choose your pet
+      <input list="listOfPet">
+      <datalist id="listOfPet">
+  <option value="Dog">Dog</option>
+  <option value="Cat">Cat</option>
+      </datalist>
+  </label>
+  <label> Number of places
+      <input list="numOfplaces">
+      <datalist id="numOfplaces">
+  <option value="1">1</option>
+  <option value="2">2</option>
+      </datalist>
+  </label>
+
+   <button type="submit">Look for a trip</button>
+</form>
+
+{{#if errorMessage}}
+   {{errorMessage}}
+{{/if}}
