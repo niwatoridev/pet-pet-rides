@@ -18,15 +18,19 @@ doors: {
 typeOfCar: {
     type: String,
     required: true,
-    enum: ["hatchback", "SUV", "sedan", "mini SUV", "van"],
+    enum: ["Hatchback", "SUV", "Sedan", "Mini SUV", "Van"],
 },
 seats: {
     type: Number,
     required: true,
 }
+},
+{
+    timestamps: true
+  }
 
 
-});
+);
 
 const Car = model("Car", carSchema);
 
