@@ -13,6 +13,8 @@ const User = require("../models/User.model");
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const navBarIsLoggedIn = require("../middleware/navBarIsLoggedIn")
+
 
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -93,8 +95,8 @@ router.post("/signup", isLoggedOut, (req, res) => {
   });
 });
 
-router.get("/login", isLoggedOut, (req, res) => {
-  res.render("auth/login");
+router.get("/login", isLoggedOut, navBarIsLoggedIn, (req, res) => {
+  res.render("auth/login", { isSession: req.session.user });
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => {

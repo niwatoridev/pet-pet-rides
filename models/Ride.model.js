@@ -12,7 +12,7 @@ const rideSchema = new Schema(
         required: true
     },
     date: {
-        type: date,
+        type: Date,
         required: true,
         departure: String 
     },

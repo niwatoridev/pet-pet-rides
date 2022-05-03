@@ -14,21 +14,28 @@
 <a href="/"><img src="../images/logo-perro.png" alt="logo"></a>
   </div>
   <div>
-<a href="/trip/new">Buscar un Viaje</a>
+<a href="/ride/search">Buscar un Viaje</a>
+
 <a href="/ride/create">Crear un Viaje</a>
+
   </div>
 <div>
-  
-<a href="/auth/signup">Registrate</a>
-<a href="/auth/login">Inicia Sesion</a>
 
 
-  <a href="/userAssets/petsList">Tus Mascotas</a>
+
+
+{{#if isSession }}
+<a href="/userAssets/petsList">Tus Mascotas</a>
 <a href="/auth/signup">Tus Vehiculos</a>
 <a href="/auth/logout">Cerrar Sesion</a>
 <a href="/register/car">Añadir Vehiculo</a>
 <a href="/register/pet">Añadir Mascota</a>
 
+{{else}}
+<a href="/auth/signup">Registrate</a>
+<a href="/auth/login">Inicia Sesion</a>
+
+{{/if}}
 
 
 

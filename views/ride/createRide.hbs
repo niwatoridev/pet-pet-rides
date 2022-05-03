@@ -6,11 +6,9 @@
       <input type="text" name="destination">
    </label>
    <label> Fecha
-      <input type="date" name="fecha">
+      <input type="datetime-local" name="date">
    </label>
-   <label> Hora
-      <input type="time" name="hora">
-   </label>
+
    <label> Selecciona tu vehículo
    <input list="listOfCar">
 
@@ -22,7 +20,7 @@
 </datalist>
    </label>
 
-   <button type="submit">Publish Trip</button>
+   <button type="submit">Publicar Viaje</button>
 </form>
 
 {{#if errorMessage}}
