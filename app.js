@@ -36,6 +36,9 @@ app.use("/register", registerRoutes);
 const rideRoutes = require("./routes/ride.routes");
 app.use("/ride", rideRoutes);
 
+const tripRoutes = require("./routes/trip.routes");
+app.use("/trip", tripRoutes);
+
 const userAssetsRoutes = require("./routes/userAssets.routes");
 app.use("/userAssets", userAssetsRoutes);
 
