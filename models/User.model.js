@@ -20,9 +20,7 @@ required: true
   email: {
     type: String,
     required: true,
-    match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
     unique: true
-    
   },
   phoneNumber: {
     type: Number,
@@ -39,13 +37,10 @@ required: true
     type: Schema.Types.ObjectId,
     ref: 'Pet'
   }],
-},
-{
-    timestamps: true
-  }
 
 
-);
+
+});
 
 const User = model("User", userSchema);
 
