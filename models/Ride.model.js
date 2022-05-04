@@ -18,8 +18,7 @@ const rideSchema = new Schema(
     },
     travelDuration: {
             type:String,
-            required: true
-        },
+            },
     price: {
         type: Number,
         required: true

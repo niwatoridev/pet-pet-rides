@@ -1,8 +1,8 @@
-<form action="/ride/createRide" method="POST">
-   <label> Origin
+<form action="/ride/create" method="POST">
+   <label> Origen
       <input type="text" name="origin">
    </label>
-   <label> Destination
+   <label> Destino
       <input type="text" name="destination">
    </label>
    <label> Fecha
@@ -10,14 +10,23 @@
    </label>
 
 <label> Selecciona tu vehículo
-   <input list="listOfCar" name="car">
-      <datalist id="listOfCar">
-         <option value="Car 1">Coche 1</option>
-         <option value="Car 2">Coche 2</option>
-      </datalist>
+   <select name="car">
+   {{#each cars}}
+   <option value="{{_id}}">{{model}}</option>
+   {{/each}}
+   </select>
 </label>
+
 <label> Precio por Persona
       <input type="number" name="price">
+</label>
+<label>¿Qué mascota llevaras?
+<select name="pet">
+{{#each mascotasEncontradas}}
+<option value="{{_id}}">{{petName}}</option>
+{{/each}}
+</select>
+
 </label>
 
    <button type="submit">Publicar Viaje</button>

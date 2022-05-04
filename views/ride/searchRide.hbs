@@ -26,6 +26,19 @@
    <button type="submit">Look for a trip</button>
 </form>
 
+
+
+
+{{#each rides}}
+<div>
+<h4>Origen: {{origin}}</h4>
+<h4>Destino: {{destination}}</h4>
+<h4>Fecha: {{date}}</h4>
+<h4>Carro: {{car.model}}</h4>
+<hr>
+</div>
+{{/each}}
+
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}

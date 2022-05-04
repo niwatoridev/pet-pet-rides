@@ -14,12 +14,12 @@ require: true,
     typeOfPet: {
     type: String,
     required: true,
-    enum: ["Dog", "Cat"],
+    enum: ["Perro", "Gato"],
 },
 size: {
     type: String,
     required: true,
-    enum: ["Extra-Small", "Small", "Medium", "Large", "Extra-Large"],
+    enum: ["Mini", "Pequeño", "Mediano", "Grande", "Extra Grande"],
 }
 
 },

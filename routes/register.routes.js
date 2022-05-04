@@ -12,15 +12,16 @@ router.get("/pet", canRegisterPet, (req, res, next) => {
 
 router.post("/pet", (req, res) => {
 const owner = req.session.user._id
-
    
   Pet.create({...req.body, owner})
   .then(newPet => {
-      res.redirect("/pets/petList", { isSession: req.session.user })
+    return User.findByIdAndUpdate(owner, {$push: {pet: newPet._id}})
+  })
+  .then(() => {
+    res.redirect("/userAssets/pets")
   })
   .catch(err => console.log(err))
 })
-
 
 /* GET car registration screen */
 router.get("/car", canRegisterPet, (req, res, next) => {
@@ -32,7 +33,7 @@ const owner = req.session.user._id
  
   Car.create({...req.body, owner})
   .then(newCar => {
-     console.log("el id es:", newCar._id)
+     
     return User.findByIdAndUpdate(owner, {$push: {car: newCar._id}})
   })
   .then(() => {

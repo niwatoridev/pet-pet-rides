@@ -39,6 +39,10 @@ required: true
     type: Schema.Types.ObjectId,
     ref: 'Pet'
   }],
+  rides: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Ride'
+  }]
 },
 {
     timestamps: true
