@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const canRegisterPet = require("../middleware/canRegisterPet");
 const Pet = require("../models/Pet.model");
-const Car = require("../models/Car.model")
+const Car = require("../models/Car.model");
+const User = require("../models/User.model");
 
 
 /* GET pet registration screen */
@@ -31,9 +32,14 @@ const owner = req.session.user._id
  
   Car.create({...req.body, owner})
   .then(newCar => {
-      res.redirect("/cars/carList", { isSession: req.session.user })
+     console.log("el id es:", newCar._id)
+    return User.findByIdAndUpdate(owner, {$push: {car: newCar._id}})
   })
+  .then(() => {
+    res.redirect("/userAssets/cars")
+  })
+
   .catch(err => console.log(err))
-})
+});
 
 module.exports = router;
