@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const Ride = require("../models/Ride.model")
 const User = require("../models/User.model");
-const Car = require("../models/Car.model")
-const Pet = require("../models/Pet.model")
+const Car = require("../models/Car.model");
+const Pet = require("../models/Pet.model");
+
 
 
 /* GET add ride page */
@@ -74,13 +75,28 @@ router.get("/mine", (req, res, next) => {
   });
 
 
-//   Post Passenger Book Seat
-// router.post("/:id", (req, res, next) => {
-//   const { id } = req.params
 
-//   Ride.findByIdAndUpdate(id)
+// Post To Filter Rides
 
-// }
+
+
+
+// Post Passenger Book Seat
+
+
+
+// Logic
+// if passenger travels 1 Mini Dog
+// (2 Available Seat for Mini || 1 Available Seat for Small  || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 Sm Dog
+// (1 Available Seat for Mini || 1 Available Seat for Small || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 Med Dog
+// (1 Available Seat for Mini || 1 Available Seat for Small || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 G Dog
+// No available Seat
 
 
 
