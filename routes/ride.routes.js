@@ -4,25 +4,20 @@ const User = require("../models/User.model");
 const Car = require("../models/Car.model")
 const Pet = require("../models/Pet.model")
 
+
 /* GET add ride page */
 router.get("/create", (req, res, next) => {
 const owner = req.session?.user?._id
 if (!owner) {
   res.redirect("/auth/login")
 } else {
-  Car.find({owner})
-  .then((cars) => {
-    
-    res.render("ride/createRide", { isSession: req.session.user, cars });
+  const promises = [Car.find({owner}), Pet.find({owner})]
+  Promise.all(promises)
+  .then(([cars, pets]) => {
+    res.render("ride/createRide", { isSession: req.session.user, cars, pets });
   })
   .catch((err) => console.log(err))
 }});
-
-
-
-
-
-
 
 
 
@@ -47,15 +42,17 @@ router.post("/create", (req, res) => {
   
   
  /* GET search ride page */
-router.get("/search", (req, res, next) => {
-Ride.find()
-.populate("car")
-.then((rides) => {
-  console.log(rides)
-  res.render("ride/searchRide", { isSession: req.session.user, rides})
-})
-.catch((err)=>console.log(err))
-});
+ router.get("/search", (req, res, next) => {
+  Ride.find()
+  .populate("car")
+  .populate("driver")
+  .then((rides) => {
+    console.log(rides)
+    res.render("ride/searchRide", { isSession: req.session.user, rides})
+  })
+  .catch((err)=>console.log(err))
+  });
+  
 
 
 /* GET my rides page */
@@ -64,7 +61,7 @@ router.get("/mine", (req, res, next) => {
 
   User.findById(_id)
   .then((user) => {
-    console.log(user)
+    
     const promises = user.rides.map((rideX) => {
       return Ride.findById(rideX)
     })
@@ -77,6 +74,13 @@ router.get("/mine", (req, res, next) => {
   });
 
 
+//   Post Passenger Book Seat
+// router.post("/:id", (req, res, next) => {
+//   const { id } = req.params
+
+//   Ride.findByIdAndUpdate(id)
+
+// }
 
 
 

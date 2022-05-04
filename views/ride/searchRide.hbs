@@ -22,8 +22,8 @@
   <option value="2">2</option>
       </datalist>
   </label>
-
-   <button type="submit">Look for a trip</button>
+{{!-- <form action="/"></form>
+   <button type="submit">Look for a trip</button> --}}
 </form>
 
 
@@ -34,7 +34,9 @@
 <h4>Origen: {{origin}}</h4>
 <h4>Destino: {{destination}}</h4>
 <h4>Fecha: {{date}}</h4>
+<h4>Conductor: {{driver.name}}</h4>
 <h4>Carro: {{car.model}}</h4>
+<button type="submit">Reservar Lugar</button>
 <hr>
 </div>
 {{/each}}
