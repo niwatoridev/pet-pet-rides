@@ -1,24 +1,49 @@
-<form action="../ride/ride.hbs" method="POST">
-   <label> Origin
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/create-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Registra una nueva travesía</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+<form action="/ride/create" method="POST">
+   <label> Origen
       <input type="text" name="origin">
    </label>
-   <label> Destination
+   <label> Destino
       <input type="text" name="destination">
    </label>
    <label> Fecha
       <input type="datetime-local" name="date">
    </label>
 
-   <label> Selecciona tu vehículo
-   <input list="listOfCar">
+<label> Selecciona tu vehículo
+   <select name="car">
+   {{#each cars}}
+   <option value="{{_id}}">{{model}}</option>
+   {{/each}}
+   </select>
+</label>
 
-<datalist id="listOfCar">
-  <option value="Car 1">Coche 1</option>
-  <option value="Car 2">Coche 2</option>
+<label> Precio por Persona
+      <input type="number" name="price">
+</label>
+<label>¿Qué mascota llevaras?
+<select name="pet">
+{{#each pets}}
+<option value="{{_id}}">{{petName}}</option>
+{{/each}}
+</select>
 
-  
-</datalist>
-   </label>
+</label>
 
    <button type="submit">Publicar Viaje</button>
 </form>

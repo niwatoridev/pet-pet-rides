@@ -18,8 +18,7 @@ const rideSchema = new Schema(
     },
     travelDuration: {
             type:String,
-            required: true
-        },
+            },
     price: {
         type: Number,
         required: true
@@ -33,11 +32,12 @@ const rideSchema = new Schema(
     type: Schema.Types.ObjectId,
     ref: 'User'
     }],
-
+    
     car: {
     type: Schema.Types.ObjectId,
     ref: 'Car'
     },
+
 },
 {
     timestamps: true

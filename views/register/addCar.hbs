@@ -1,8 +1,23 @@
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/cars-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Registra tu vehículo</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
 <form action="/register/car" method="POST">
-   <label> Car Model: 
+   <label> ¿Qué modelo es? 
       <input type="text" name="model">
    </label>
-   <label> What type of car is it?
+   <label> ¿Qué tipo de coche es?
    <input name="typeOfCar" list="typeOfCar">
 
 <datalist id="typeOfCar">
@@ -15,16 +30,16 @@
 </datalist>
    </label>
    
-   <label> How many doors does it has?
+   <label> ¿Cuántas puertas tiene?
       <input type="number" name="doors">
     </label>
-   <label> How many seats does it have?
+   <label> ¿Cuántos asientos tiene?
       <input type="text" name="seats">
     </label>
    
    
    
-   <button type="submit">Register your Car</button>
+   <button type="submit">Registra tu Coche</button>
 </form>
 
 {{#if errorMessage}}

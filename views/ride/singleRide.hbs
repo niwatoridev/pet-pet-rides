@@ -1,0 +1,33 @@
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/search-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Detalles del Viaje</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+<h2>Este es el viaje que escogiste</h2>
+<img src="/images/screenshot.png" alt="">
+
+
+<div>
+<h2>Origen: {{resultadoRide.origin}}</h2>
+<h2>Destino: {{resultadoRide.destination}}</h2>
+<h2>Fecha: {{resultadoRide.date}}</h2>
+<h2>Costo: {{resultadoRide.price}}</h2>
+<h2>Conductor: {{resultadoRide.driver.name}}</h2>
+<h2>Vehiculo: {{resultadoRide.car.model}}</h2>
+</div>
+<div>
+    <form action="/ride/{{resultadoRide._id}}/reservar" method="POST">
+   <button type="submit">Confirmar Reservación</button>
+   </form>
+</div>

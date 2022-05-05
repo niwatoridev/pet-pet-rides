@@ -1,27 +1,45 @@
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/pets-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Registra a tu peludo</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
 <form action="/register/pet" method="POST">
-   <label> Pet's Name
+   <label> Nombre de tu Mascota
       <input type="text" name="petName">
    </label>
-   <label> What's your Pet?
+   <label> ¿Qué animal es?
       <input name="typeOfPet" list="kindOfPet">
       <datalist id="kindOfPet">
-<option value="Dog">Dog</option>
-<option value="Cat">Cat</option>
+<option value="Perro"></option>
+<option value="Gato"></option>
 
       </datalist>
    </label>
-   <label> Size of your pet?
+   <label> ¿De qué tamaño es?
    <input name="size" list="sizeOfPet">
 
 <datalist id="sizeOfPet">
-  <option value="Small">Small</option>
-  <option value="Medium">Medium</option>
-  <option value="Large">Large</option>
+  <option value="Mini">Mini</option>
+  <option value="Pequeño">Pequeño</option>
+  <option value="Mediano">Mediano</option>
+  <option value="Grande">Grande</option>
+  
   
 </datalist>
    </label>
    
-   <button type="submit">Register your Friend</button>
+   <button type="submit">Registra a tu amigo</button>
 </form>
 
 {{#if errorMessage}}

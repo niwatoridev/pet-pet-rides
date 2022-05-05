@@ -1,31 +1,60 @@
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/search-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Encuentra tu aventón perfecto</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<div class="divBodySearch">
+<div class="divFormularioSearch"> 
 <form action="/ride/search.hbs" method="POST">
-   <label> Origin
+   <label> Origen
       <input type="text" name="origin">
    </label>
-   <label> Destination
+   <label> Destino
       <input type="text" name="destination">
    </label>
-   <label> Date
+   <label> Fecha
       <input type="date" name="date">
    </label>
-   <label> Choose your pet
-      <input list="listOfPet">
-      <datalist id="listOfPet">
-  <option value="Dog">Dog</option>
-  <option value="Cat">Cat</option>
-      </datalist>
-  </label>
-  <label> Number of places
-      <input list="numOfplaces">
-      <datalist id="numOfplaces">
-  <option value="1">1</option>
-  <option value="2">2</option>
-      </datalist>
-  </label>
-
-   <button type="submit">Look for a trip</button>
+   <label> ¿Que mascota viaja?
+   <select name="pet">
+   {{#each pets}}
+   
+   <option value="{{_id}}">{{petName}}</option>
+   {{/each}}
+   </select>
+</label>
+  
+{{!-- <form action="/"></form>
+   <button type="submit">Look for a trip</button> --}}
 </form>
+</div>
 
+<div>
+   <h2>Viajes Disponibles</h2>
+</div>
+<div class="divMainSearch">
+{{#each rides}}
+   <div class="divMainSearch-1">
+      <h4>Origen: {{origin}}</h4>
+      <h4>Destino: {{destination}}</h4>
+      <h4>Fecha: {{date}}</h4>
+      <h4>Conductor: {{driver.name}}</h4>
+      <h4>Carro: {{car.model}}</h4>
+      <h4>Asientos Disponibles: {{car.seats}}</h4>
+      <button><a href="/ride/{{_id}}">Reservar Lugar</a></button>
+   </div>
+{{/each}}
+</div>
+</div>
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}
