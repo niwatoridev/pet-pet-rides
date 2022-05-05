@@ -46,7 +46,7 @@ router.post("/create", (req, res) => {
   .populate("car")
   .populate("driver")
   .then((rides) => {
-    console.log(rides)
+    // console.log(rides)
     res.render("ride/searchRide", { isSession: req.session.user, rides})
   })
   .catch((err)=>console.log(err))
@@ -80,6 +80,46 @@ router.get("/mine", (req, res, next) => {
 
 
 // Post Passenger Book Seat
+router.get("/:idRide", (req, res, next) => {
+const { idRide } = req.params;
+
+Ride.findById(idRide)
+.populate("driver")
+.populate("car")
+.then(resultadoRide => {
+  console.log(resultadoRide)
+  res.render("ride/singleRide", { isSession: req.session.user, resultadoRide })
+})
+.catch(err => console.log(err))
+
+})
+
+router.post("/:idRide/reservar", (req, res, next) => {
+  const { idRide } = req.params
+  const requester = req.session.user._id
+  
+      console.log("este es el requester: ", requester)
+      console.log("este es el idRide: ", idRide)
+    
+      return Ride.findByIdAndUpdate(idRide, {$push: {passengers: requester}})
+    
+    .then(() => {
+      res.redirect(`/ride/booked/${idRide}`)
+    })
+      .catch(err => console.log(err))
+  })
+
+router.get("/booked/:idRide", (req,res,next) => {
+
+
+res.render("ride/rideBooked", { isSession: req.session.user })
+})
+
+
+  
+
+
+
 
 
 
