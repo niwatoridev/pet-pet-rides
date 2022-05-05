@@ -1,1 +1,28 @@
-<p>this is the car list</p>
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/cars-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Estos son tus vehículos</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<h2>Tus Vehiculos</h2>
+{{#each carrosRegistrados}}
+
+
+    <h4>
+        {{model}}
+    </h4>
+    <h4>Numero de puertas: {{doors}}</h4>
+    <h4>Tipo de coche: {{typeOfCar}}</h4>
+    <hr>
+
+{{/each}}
+
+<a href="/register/car">Añadir Vehiculo</a>

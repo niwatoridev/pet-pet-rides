@@ -1,1 +1,28 @@
-<p>this is the pet list</p>
+<!-- Page Header-->
+        <header class="masthead1" style="background-image: url('../images/headers/pets-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Tus Mascotas</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<h2>Tus Mascotas</h2>
+{{#each mascotasEncontradas}}
+
+
+    <h4>
+        {{petName}}
+    </h4>
+    <h4>{{typeOfPet}}</h4>
+    <h4>Tamaño: {{size}}</h4>
+    <hr>
+
+{{/each}}
+
+<a href="/register/pet">Añadir Mascota</a>
