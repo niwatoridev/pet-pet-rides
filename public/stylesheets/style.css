@@ -11508,3 +11508,8 @@ header.masthead .site-heading .h1 {
   padding-left: 8%;
   padding-right: 20%;
 }
+
+.triproad{
+  padding-left: 8%;
+  display: flex;
+}
