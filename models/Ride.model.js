@@ -37,6 +37,7 @@ const rideSchema = new Schema(
     type: Schema.Types.ObjectId,
     ref: 'Car'
     },
+
 },
 {
     timestamps: true

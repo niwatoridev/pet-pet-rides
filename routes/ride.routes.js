@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const Ride = require("../models/Ride.model")
 const User = require("../models/User.model");
-const Car = require("../models/Car.model")
-const Pet = require("../models/Pet.model")
+const Car = require("../models/Car.model");
+const Pet = require("../models/Pet.model");
+
+
 
 /* GET add ride page */
 router.get("/create", (req, res, next) => {
@@ -10,10 +12,10 @@ const owner = req.session?.user?._id
 if (!owner) {
   res.redirect("/auth/login")
 } else {
-  Car.find({owner})
-  .then((cars) => {
-    
-    res.render("ride/createRide", { isSession: req.session.user, cars });
+  const promises = [Car.find({owner}), Pet.find({owner})]
+  Promise.all(promises)
+  .then(([cars, pets]) => {
+    res.render("ride/createRide", { isSession: req.session.user, cars, pets });
   })
   .catch((err) => console.log(err))
 }});
@@ -39,15 +41,17 @@ router.post("/create", (req, res) => {
   
   
  /* GET search ride page */
-router.get("/search", (req, res, next) => {
-Ride.find()
-.populate("car")
-.then((rides) => {
-  console.log(rides)
-  res.render("ride/searchRide", { isSession: req.session.user, rides})
-})
-.catch((err)=>console.log(err))
-});
+ router.get("/search", (req, res, next) => {
+  Ride.find()
+  .populate("car")
+  .populate("driver")
+  .then((rides) => {
+    console.log(rides)
+    res.render("ride/searchRide", { isSession: req.session.user, rides})
+  })
+  .catch((err)=>console.log(err))
+  });
+  
 
 
 /* GET my rides page */
@@ -56,7 +60,7 @@ router.get("/mine", (req, res, next) => {
 
   User.findById(_id)
   .then((user) => {
-    console.log(user)
+    
     const promises = user.rides.map((rideX) => {
       return Ride.findById(rideX)
     })
@@ -69,6 +73,28 @@ router.get("/mine", (req, res, next) => {
   });
 
 
+
+// Post To Filter Rides
+
+
+
+
+// Post Passenger Book Seat
+
+
+
+// Logic
+// if passenger travels 1 Mini Dog
+// (2 Available Seat for Mini || 1 Available Seat for Small  || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 Sm Dog
+// (1 Available Seat for Mini || 1 Available Seat for Small || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 Med Dog
+// (1 Available Seat for Mini || 1 Available Seat for Small || 1 Available Seat for Medium) && 0 Available Seat for Big
+
+// if passenger travels 1 G Dog
+// No available Seat
 
 
 
