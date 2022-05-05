@@ -4,7 +4,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Estos son tus vehículos</h1>
+                            <h1>Tus vehículos</h1>
                             
                         </div>
                     </div>
@@ -12,21 +12,23 @@
             </div>
         </header>
 
-<h2>Tus Vehiculos</h2>
-{{#each carrosRegistrados}}
-
-
-    <h4>
-        {{model}}
-    </h4>
-    <h4>Numero de puertas: {{doors}}</h4>
-    <h4>Tipo de coche: {{typeOfCar}}</h4>
-    <hr>
-
-{{/each}}
-
-<a href="/register/car">Añadir Vehiculo</a>
-
+    <div class="matrizCoches">
+        <div class="botonCoche">
+            <button><a href="/register/car">Añadir Vehiculo</a></button>
+        </div>
+        
+    <div class="child2MatrizCoches">
+        {{#each carrosRegistrados}}
+        <div class="contenedorCoche">
+            <img class="car-icon" src="/images/icons/{{typeOfCar}}.png" alt="{{typeOfCar}}-icon">
+            <h4>{{model}}</h4>
+            <h4>Tipo de coche: {{typeOfCar}}</h4>
+            <h4>Numero de puertas: {{doors}}</h4>
+            <h4>Numero de Asientos: {{seats}}</h4>
+        </div>
+        {{/each}}
+    </div>
+</div>
 
 
 

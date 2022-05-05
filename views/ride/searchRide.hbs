@@ -43,14 +43,18 @@
 </div>
 <div class="divMainSearch">
 {{#each rides}}
+   <div class="masterGridResult">
+   <div class="divMainSearch-1">
+         <img src="../images/screenshot.png" alt="">
+   </div>
    <div class="divMainSearch-1">
       <h4>Origen: {{origin}}</h4>
       <h4>Destino: {{destination}}</h4>
-      <h4>Fecha: {{date}}</h4>
-      <h4>Conductor: {{driver.name}}</h4>
+      <h4>Fecha: {{fecha date}}</h4>
       <h4>Carro: {{car.model}}</h4>
-      <h4>Asientos Disponibles: {{car.seats}}</h4>
+      <h4>Costo: {{price}}</h4>
       <button><a href="/ride/{{_id}}">Reservar Lugar</a></button>
+   </div>
    </div>
 {{/each}}
 </div>

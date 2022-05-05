@@ -13,35 +13,52 @@
         </header>
 
 
-<form action="/register/car" method="POST">
-   <label> ¿Qué modelo es? 
-      <input type="text" name="model">
-   </label>
-   <label> ¿Qué tipo de coche es?
-   <input name="typeOfCar" list="typeOfCar">
+<div class="matrizFormCarCreate">
+        <div>
+            <img class="car-icon" src="/images/icons/hatchback.png" alt="hatckback-icon">
+            <img class="car-icon" src="/images/icons/sedan.png" alt="sedan-icon">
+            <img class="car-icon" src="/images/icons/mini suv.png" alt="mini-suv-icon">
+            <img class="car-icon" src="/images/icons/suv.png" alt="suv-icon">
+            <img class="car-icon" src="/images/icons/van.png" alt="van-icon">
+        </div>
+        <div>
+            <div class="formPetCreate">
+                    <form action="/register/car" method="POST">
+                <div>
+                    <label> ¿Qué modelo es? 
+                        <input type="text" name="model">
+                    </label>
+                </div>
+                <div>    
+                    <label> ¿Qué tipo de coche es?
+                    <select name="typeOfCar">
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Mini SUV">Mini SUV</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Van">Van</option>
+                    </select>
+                    </label>
+                </div>
+                <div>
+                    <label> ¿Cuántas puertas tiene?
+                        <input type="number" name="doors">
+                    </label>
+                </div>
+                <div>    
+                    <label> ¿Cuántos asientos tiene?
+                        <input type="text" name="seats">
+                    </label>
+                </div>
 
-<datalist id="typeOfCar">
-  <option value="Hatchback">Hatchback</option>
-  <option value="SUV">SUV</option>
-  <option value="Sedan">Sedan</option>
-  <option value="Mini SUV">Mini SUV</option>
-  <option value="Van">Van</option>
-  
-</datalist>
-   </label>
-   
-   <label> ¿Cuántas puertas tiene?
-      <input type="number" name="doors">
-    </label>
-   <label> ¿Cuántos asientos tiene?
-      <input type="text" name="seats">
-    </label>
-   
-   
-   
-   <button type="submit">Registra tu Coche</button>
-</form>
+                <div>
+                    <button type="submit">Registra tu Coche</button>
+                </div>
+                    </form>
+            </div>
+        </div>
 
+</div>
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}

@@ -13,34 +13,36 @@
         </header>
 
 
-
-<form action="/register/pet" method="POST">
-   <label> Nombre de tu Mascota
-      <input type="text" name="petName">
-   </label>
-   <label> ¿Qué animal es?
-      <input name="typeOfPet" list="kindOfPet">
-      <datalist id="kindOfPet">
-<option value="Perro"></option>
-<option value="Gato"></option>
-
-      </datalist>
-   </label>
-   <label> ¿De qué tamaño es?
-   <input name="size" list="sizeOfPet">
-
-<datalist id="sizeOfPet">
-  <option value="Mini">Mini</option>
-  <option value="Pequeño">Pequeño</option>
-  <option value="Mediano">Mediano</option>
-  <option value="Grande">Grande</option>
-  
-  
-</datalist>
-   </label>
-   
-   <button type="submit">Registra a tu amigo</button>
-</form>
+<div class="formPetCreate">
+    <form action="/register/pet" method="POST">
+        <div>
+            <h3> Nombre de tu Mascota
+                <input type="text" name="petName">
+            </h3>
+        </div>
+        <div>    
+            <h3> ¿Qué animal es?
+                <select name="typeOfPet">
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                </select>
+            </h3>
+        </div>
+        <div>    
+            <h3> ¿De qué tamaño es?
+                <select name="size">
+                    <option value="Mini">Mini</option>
+                    <option value="Pequeño">Pequeño</option>
+                    <option value="Mediano">Mediano</option>
+                    <option value="Grande">Grande</option>
+                </select>
+            </h3> 
+        </div>
+        <div>
+            <button type="submit">Añadir</button>
+        </div>
+    </form>
+</div>
 
 {{#if errorMessage}}
    {{errorMessage}}
