@@ -13,20 +13,27 @@
         </header>
 
 
-<h2>Tus Viajes</h2>
+
+
+<div class="masterTrips">
+
+<div class="masterTripsChild">
 {{#each viajesEncontrados}}
-
-
-    <h4>
-        Origen: {{origin}}
-    </h4>
-    <h4>Destino: {{destination}}</h4>
-   <h4>Fecha: {{fecha date}}</h4>
-
-   <hr>
-
+   <div class="masterTripsGrandchild"> 
+ 
+            <h5>
+                Origen: {{origin}}
+            </h5>
+            <h5>Destino: {{destination}}</h5>
+            <h5>Fecha: {{fecha date}}</h5>
+        
+   </div>
 {{/each}}
-
+</div>
+        <div>
+          <img class="imgPerro" src="/images/senalando.png" alt="perro-senalando">  
+        </div>
+</div>
 
 
 
