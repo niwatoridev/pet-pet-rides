@@ -13,6 +13,90 @@
 
 /* Usuario */
 
+header.masthead1 {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-color: #6c757d;
+  background-size: cover;
+  background-attachment: scroll;
+}
+header.masthead1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212529;
+  opacity: 0.5;
+}
+header.masthead1 .page-heading,
+header.masthead1 .post-heading,
+header.masthead1 .site-heading {
+  color: #fff;
+}
+header.masthead1 .page-heading,
+header.masthead1 .site-heading {
+  text-align: center;
+}
+header.masthead1 .page-heading h1, header.masthead1 .page-heading .h1,
+header.masthead1 .site-heading h1,
+header.masthead1 .site-heading .h1 {
+  font-size: 3rem;
+}
+header.masthead1 .page-heading .subheading,
+header.masthead1 .site-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.625rem;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead1 .post-heading h1, header.masthead1 .post-heading .h1 {
+  font-size: 2.25rem;
+}
+header.masthead1 .post-heading .meta,
+header.masthead1 .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+header.masthead1 .post-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem 0 2rem;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead1 .post-heading .meta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead1 .post-heading .meta a {
+  color: #fff;
+}
+@media (min-width: 992px) {
+  header.masthead1 {
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
+  }
+  header.masthead1 .page-heading h1, header.masthead1 .page-heading .h1,
+header.masthead1 .site-heading h1,
+header.masthead1 .site-heading .h1 {
+    font-size: 5rem;
+  }
+  header.masthead1 .post-heading h1, header.masthead1 .post-heading .h1 {
+    font-size: 3.5rem;
+  }
+  header.masthead1 .post-heading .subheading {
+    font-size: 1.875rem;
+  }
+}
+
 
 .divMainSearch {
   display: flex;
@@ -37,6 +121,45 @@
   margin-bottom: 50px;
 }
 
+
+.cuadriculaIndex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+}
+
+.masterGridAyuda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+  
+}
+
+.childMasterGridAyuda {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-between;
+}
+
+.divisionMasterGridAyuda {
+  display: flex;
+  flex-direction: row;
+}
+
+.grandsonMasterGridAyuda {
+  width: 450px;
+  
+  flex-wrap: nowrap;
+}
 
 
 
@@ -105,7 +228,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
