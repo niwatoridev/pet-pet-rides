@@ -42,18 +42,20 @@ router.post("/create", (req, res) => {
   
  /* GET search ride page */
  router.get("/search", (req, res, next) => {
-  Ride.find()
-  .populate("car")
-  .populate("driver")
-  .then((rides) => {
-    // console.log(rides)
-    res.render("ride/searchRide", { isSession: req.session.user, rides})
-  })
-  .catch((err)=>console.log(err))
-  });
+   const owner = req.session?.user?._id
+   const promises = [Ride.find().populate("car").populate("driver"), Car.find({owner}), Pet.find({owner})]
+   Promise.all(promises)
+   
   
+   .then(([rides, cars, pets]) => {
+     res.render("ride/searchRide", { isSession: req.session.user, rides, cars, pets });
+     console.log(pets)
+    //  res.render("ride/searchRide", { isSession: req.session.user, rides})
+   })
+   .catch((err)=>console.log(err))
+   });
 
-
+ 
 /* GET my rides page */
 router.get("/mine", (req, res, next) => {
   const { _id } = req.session.user
