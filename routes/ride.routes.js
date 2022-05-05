@@ -19,14 +19,6 @@ if (!owner) {
 }});
 
 
-
-
-
-
-
-
-
-
 // Create Ride
 router.post("/create", (req, res) => {
   const driver = req.session.user._id
