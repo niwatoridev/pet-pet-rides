@@ -5,48 +5,62 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Registra una nueva travesía</h1>
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-
-
+<div class="formRideCreate">
 <form action="/ride/create" method="POST">
-   <label> Origen
+   <div>
+   <h3> Origen
       <input type="text" name="origin">
-   </label>
-   <label> Destino
+   </h3>
+   </div>
+   <div>
+   <h3> Destino
       <input type="text" name="destination">
-   </label>
-   <label> Fecha
+   </h3>
+   </div>
+   <div>
+   <h3> Fecha
       <input type="datetime-local" name="date">
-   </label>
+   </h3>
+   </div>
+   <div> 
 
-<label> Selecciona tu vehículo
+<h3> Selecciona tu vehículo
    <select name="car">
    {{#each cars}}
    <option value="{{_id}}">{{model}}</option>
    {{/each}}
    </select>
-</label>
-
-<label> Precio por Persona
+</h3>
+</div>
+<div> 
+<h3> Precio por Persona
       <input type="number" name="price">
-</label>
-<label>¿Qué mascota llevaras?
+</h3>
+</div>
+<div> 
+<h3>¿Qué mascota llevaras?
 <select name="pet">
 {{#each pets}}
 <option value="{{_id}}">{{petName}}</option>
 {{/each}}
 </select>
 
-</label>
-
+</h3>
+</div>
+   <div style="justify-items: center;">
    <button type="submit">Publicar Viaje</button>
+   </div>
 </form>
+
+<div><img src="/images/perro-viaje.png" alt=""></div>
+
+</div>
 
 {{#if errorMessage}}
    {{errorMessage}}

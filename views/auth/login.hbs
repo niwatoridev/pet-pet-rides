@@ -4,7 +4,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Encuentra tu aventón perfecto</h1>
+                            <h1>Iniciar Sesión</h1>
                             
                         </div>
                     </div>
@@ -13,17 +13,27 @@
         </header>
 
 
+<div class="formRideCreate">
+    <form action="/auth/login" method="POST">
+        <div>
+            <label> Username
+                <input type="text" name="username">
+            </label>
+        </div>    
+        <div>
+            <label> Password
+                <input type="password" name="password">
+            </label>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+<div>
+    <img src="/images/patita.png" alt="patita">
+</div>
 
-<form action="/auth/login" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
-
-   <button type="submit">Submit</button>
-</form>
+</div>
 
 {{#if errorMessage}}
    {{errorMessage}}

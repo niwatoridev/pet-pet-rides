@@ -14,14 +14,14 @@
 
 
 
-<h2>Este es el viaje que escogiste</h2>
-<img src="/images/screenshot.png" alt="">
+<div class="singleRideMatriz">
 
+<img src="/images/screenshot.png" alt="">
 
 <div>
 <h2>Origen: {{resultadoRide.origin}}</h2>
 <h2>Destino: {{resultadoRide.destination}}</h2>
-<h2>Fecha: {{resultadoRide.date}}</h2>
+<h2>Fecha: {{fecha resultadoRide.date}}</h2>
 <h2>Costo: {{resultadoRide.price}}</h2>
 <h2>Conductor: {{resultadoRide.driver.name}}</h2>
 <h2>Vehiculo: {{resultadoRide.car.model}}</h2>
@@ -30,4 +30,6 @@
     <form action="/ride/{{resultadoRide._id}}/reservar" method="POST">
    <button type="submit">Confirmar Reservación</button>
    </form>
+</div>
+<div><img src="/images/perro-maletas.png" alt="perro-con-maletas"></div>
 </div>

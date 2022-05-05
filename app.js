@@ -12,6 +12,18 @@ const express = require("express");
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
+const moment = require("moment")
+
+hbs.registerHelper("fecha", function (fechasSinFormato) {
+const fechaFormateada = moment(fechasSinFormato).format("DD/MM/YYYY hh:mm A")
+return fechaFormateada
+})
+
+
+hbs.registerHelper("checarTipoAnimal", function (tipo) {
+ const resultadoTipo = tipo == "Perro"?"Dog":"Cat"
+ return resultadoTipo   
+})
 
 const app = express();
 

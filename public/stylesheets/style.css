@@ -161,8 +161,98 @@ header.masthead1 .site-heading .h1 {
   flex-wrap: nowrap;
 }
 
+.formRideCreate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.matrizMascotas {
+  display: flex;
+  flex-direction: column;
+  margin: 150px;
+  align-items: center;
+}
+
+.botonMascota {
+  margin: 50px;
+}
+
+.child2MatrizMascotas {
+  display: flex;
+  flex-direction: row;
+}
+
+.contenedorMascota {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+
+  .matrizCoches {
+    display: flex;
+    flex-direction: column;
+    margin: 150px;
+    align-items: center;
+  }
+  
+  .botonCoche {
+    margin: 50px;
+  }
+  
+  .child2MatrizCoches {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .contenedorCoche {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    }
+
+    .car-icon {
+      width: 50px;
+      margin-left: 30px;
+    }
+
+    .icon-animal {
+      width: 50px;
+    }
+
+    .matrizFormCarCreate {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+    }
+
+    .singleRideMatriz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
 
 
+
+
+  .formPetCreate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    
+  }
 
 
 

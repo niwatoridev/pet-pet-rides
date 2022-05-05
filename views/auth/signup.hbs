@@ -4,7 +4,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Encuentra tu aventón perfecto</h1>
+                            <h1>¡Bienvenido a la Familia!</h1>
                             
                         </div>
                     </div>
@@ -12,27 +12,39 @@
             </div>
         </header>
 
-
-<form action="/auth/signup" method="POST">
-   <label> Name
-      <input type="text" name="name">
-   </label>
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
-   <label> Email
-      <input type="email" name="email">
-   </label>
-   <label> Phone Number
-      <input type="tel" name="phoneNumber">
-   </label>
-
-   <button type="submit">Create Account</button>
-</form>
-
+<div class="formRideCreate">
+   <form action="/auth/signup" method="POST">
+         <div>
+            <label> Name
+               <input type="text" name="name">
+            </label>
+         </div>
+         <div>   
+            <label> Username
+               <input type="text" name="username">
+            </label>
+         </div>
+         <div>   
+            <label> Password
+               <input type="password" name="password">
+            </label>
+         </div>
+         <div>
+            <label> Email
+               <input type="email" name="email">
+            </label>
+         </div>
+         <div>
+            <label> Phone Number
+               <input type="tel" name="phoneNumber">
+            </label>
+         </div>
+         <div>
+            <button type="submit">Create Account</button>
+         </div>
+   </form>
+   <img src="/images/gato-saluda.png" alt="gato-img">
+</div>
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}
