@@ -13,27 +13,14 @@
         </header>
 
 
-<div class="matrizMascotas">
-    <div class="botonMascota">
-        <button><a href="/register/pet">Añadir Mascota</a></button>
-    </div>
-    <div class="child2MatrizMascotas">
-        {{#each mascotasEncontradas}}
-        <div class="contenedorMascota">
-            <img class="icon-animal" src="/images/icons/{{checarTipoAnimal typeOfPet}}.png" alt="{{checarTipoAnimal typeOfPet}}-icon">
-            <h4>{{petName}}</h4>
-            <h4>{{typeOfPet}}</h4>
-            <h4>Tamaño: {{size}}</h4>
-        </div>
-        {{/each}}
-    </div>    
-</div>
 
+    <h4>
+        {{petName}}
+    </h4>
+    <h4>{{typeOfPet}}</h4>
+    <h4>Tamaño: {{size}}</h4>
+    <hr>
 
+{{/each}}
 
-
-
-
-
-
-
+<a href="/register/pet">Añadir Mascota</a>

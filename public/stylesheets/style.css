@@ -11503,3 +11503,13 @@ header.masthead .site-heading .h1 {
     font-size: 2.25rem;
   }
 }
+
+.help{
+  padding-left: 8%;
+  padding-right: 20%;
+}
+
+.triproad{
+  padding-left: 8%;
+  display: flex;
+}
