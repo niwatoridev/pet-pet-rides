@@ -21,7 +21,7 @@ return fechaFormateada
 
 
 hbs.registerHelper("checarTipoAnimal", function (tipo) {
- const resultadoTipo = tipo == "Perro"?"Dog":"Cat"
+ const resultadoTipo = tipo == "Perro"?"dog":"cat"
  return resultadoTipo   
 })
 
@@ -56,3 +56,5 @@ app.use("/userAssets", userAssetsRoutes);
 require("./error-handling")(app);
 
 module.exports = app;
+
+// const resultadoTipo = tipo == "Perro"?"Dog":"Cat"          Esta linea fue la culpa del bug que me quebraba el coco
