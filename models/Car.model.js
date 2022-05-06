@@ -18,7 +18,7 @@ doors: {
 typeOfCar: {
     type: String,
     required: true,
-    enum: ["Hatchback", "SUV", "Sedan", "Mini SUV", "Van"],
+    enum: ["Hatchback", "SUV", "Sedan", "Mini-SUV", "Van"],
 },
 seats: {
     type: Number,
