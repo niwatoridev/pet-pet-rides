@@ -273,7 +273,51 @@ align-items: center;
   .masterTripsGrandchild {
     margin-left: 50px;
   }
-  
+
+  .textoFinalIndex {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.triproad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8accdc;
+}
+
+.imagenPerroViajando {
+  width: 600px;
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
+
+.help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.help p {
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 
 
@@ -11524,11 +11568,9 @@ header.masthead .site-heading .h1 {
 }
 
 .help{
-  padding-left: 8%;
-  padding-right: 20%;
+  
 }
 
 .triproad{
-  padding-left: 8%;
-  display: flex;
+    display: flex;
 }
